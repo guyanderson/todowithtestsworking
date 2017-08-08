@@ -1,0 +1,20 @@
+﻿@model ToDoXUnitTest.Models.Category
+@{
+    ViewData["Title"] = "Create Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body>
+    <h2>Create</h2>
+    <hr />
+    <h4>Add new Category</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)
+        <input type="submit" value="Add new category" />
+    }
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+</body>
+

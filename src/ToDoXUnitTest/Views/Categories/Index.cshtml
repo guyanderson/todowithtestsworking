@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ToDoXUnitTest.Models.Category>
+@{
+    ViewData["Title"] = "To Do List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body>
+    <h2>Categories</h2>
+    <h4>@Html.DisplayNameFor(model => model.Name)</h4>
+    <ul>
+        @foreach (var listCategory in Model)
+        {
+            <li>
+                @Html.DisplayFor(modelCategory => listCategory.Name) |
+                @Html.ActionLink("Edit", "Edit", new { id = listCategory.CategoryId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = listCategory.CategoryId }) |
+                @Html.ActionLink("Details", "Details", new { id = listCategory.CategoryId }) 
+
+
+
+            </li>
+        }
+    </ul>
+    <p>@Html.ActionLink("Add new category", "Create")</p>
+</body>
